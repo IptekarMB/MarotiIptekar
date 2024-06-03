@@ -1,27 +1,12 @@
-let input = document.getElementById('inputBox');
-let buttons = document.querySelectorAll('button');
+// script.js
 
-let string = "";
-let arr = Array.from(buttons);
-arr.forEach(button => {
-    button.addEventListener('click', (e) =>{
-        if(e.target.innerHTML == '='){
-            string = eval(string);
-            input.value = string;
-        }
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Get a reference to the button element
+    const myButton = document.getElementById('my-button');
 
-        else if(e.target.innerHTML == 'AC'){
-            string = "";
-            input.value = string;
-        }
-        else if(e.target.innerHTML == 'DEL'){
-            string = string.substring(0, string.length-1);
-            input.value = string;
-        }
-        else{
-            string += e.target.innerHTML;
-            input.value = string;
-        }
-        
-    })
-})
+    // Add a click event listener
+    myButton.addEventListener('click', function () {
+        alert('Button clicked!'); // Show an alert when the button is clicked
+    });
+});
